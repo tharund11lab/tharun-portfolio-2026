@@ -46,7 +46,7 @@ export default function Hero() {
 
           <motion.div className="hero-actions" custom={4} variants={rise}>
             <a className="btn btn-solid" href="#work">View My Work <span className="arr">↗</span></a>
-            <a className="btn btn-line" href="/resume.pdf" download="Tharun-Derangula-Resume.pdf">Download Resume</a>
+            <a className="btn btn-line" href="/Tharun_Derangula_Fullstack_Resume.pdf" download="Tharun-Derangula-Resume.pdf">Download Resume</a>
             <a className="btn btn-line" href={`mailto:${profile.email}`}>Email</a>
           </motion.div>
         </motion.div>
