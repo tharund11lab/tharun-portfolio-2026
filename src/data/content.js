@@ -36,97 +36,78 @@ export const projects = [
     id: 'sparky',
     index: '01',
     company: 'Walmart Global Tech',
-    title: 'Sparky — Walmart’s AI Shopping Agent',
+    project: 'Sparky — Walmart’s AI Shopping Agent',
     period: 'Apr 2025 — Present',
     region: 'USA',
-    blurb:
-      'Customer-facing conversational shopping and cart workflows across web and mobile, plus the AI relevance and event pipelines underneath them — built at Walmart scale with PM, design, and ML teams.',
-    metrics: [
-      { value: '−35%', label: 'p95 API latency on recommendation endpoints' },
-      { value: '+20%', label: 'AI recommendation relevance (A/B tested)' },
-      { value: '<50ms', label: 'Median latency held through traffic spikes' },
-      { value: 'millions', label: 'Shopping events processed reliably / day' },
+    narrative: [
+      'Sparky is Walmart’s AI-powered shopping assistant that helps customers discover products, compare options, and receive personalized recommendations through natural-language conversations. It was built to make product discovery feel intuitive and conversational for millions of Walmart customers across web and mobile.',
+      'As a Full-Stack Software Engineer, I work on the backend services, event-driven workflows, and AI integration layers that power product retrieval, recommendation pipelines, and the conversational shopping experience. I design APIs, integrate distributed systems, build reliable data flows, and improve the performance and resiliency of customer-facing services.',
+      'I work extensively with event-driven architecture, real-time messaging, AI-powered retrieval pipelines, and cloud-native infrastructure so the platform handles large-scale traffic while holding low latency and high availability. My work supports an experience used by millions of customers while enabling faster feature delivery, improved reliability, and seamless AI-driven interactions.',
     ],
-    highlights: [
-      'Shipped conversational shopping & cart features in React, Next.js, and TypeScript.',
-      'Architected cart auto-build and intent-routing microservices in Java, Spring Boot, Kafka, and PostgreSQL with idempotent retries and dead-letter queues.',
-      'Integrated Walmart’s Wallaby LLM via the Element ML Platform using RAG, pgvector, and vector retrieval.',
-      'Automated infra with Docker, Kubernetes, Terraform, WCNP, and GitHub Actions; observability via Datadog + Grafana.',
-    ],
-    stack: ['React', 'Next.js', 'TypeScript', 'Java', 'Spring Boot', 'Kafka', 'PostgreSQL', 'Redis', 'RAG', 'pgvector', 'GCP', 'Kubernetes'],
+    stack: ['Java', 'Spring Boot', 'Kafka', 'GraphQL', 'React', 'Next.js', 'PostgreSQL', 'pgvector', 'Redis', 'Kubernetes', 'Terraform', 'gRPC', 'LLM / RAG', 'AWS', 'GitHub Actions', 'Observability'],
   },
   {
     id: 'ksu',
     index: '02',
     company: 'Kennesaw State University',
-    title: 'Campus Hub — One Platform for a University',
+    project: 'Campus Hub — One Platform for a University',
     period: 'Jan 2024 — Dec 2024',
     region: 'USA',
-    blurb:
-      'Consolidated Owl Express, D2L Brightspace, DegreeWorks, and KSUMail into a single responsive platform for students and faculty — with reconciliation services keeping every connected system honest.',
-    metrics: [
-      { value: '−30%', label: 'Dashboard load time' },
-      { value: '−40%', label: 'Manual data correction across systems' },
-      { value: '−50%', label: 'Deployment cycle time' },
-      { value: '80%+', label: 'Test coverage maintained' },
+    narrative: [
+      'Campus Hub is a unified student and faculty platform that brings Owl Express, D2L Brightspace, DegreeWorks, and KSUMail together behind a single responsive interface. Before it, students juggled several disconnected systems to register for classes, track grades, and check financial aid — slow, confusing, and error-prone, especially during peak registration.',
+      'I built the platform end to end: the React, Next.js, and TypeScript front end, the Node.js and Spring Boot APIs behind it, and the integrations into Ellucian Banner and DegreeWorks with query tuning and caching to keep dashboards fast. I owned the Java/Spring Boot services over PostgreSQL and the reconciliation layer that keeps enrollment, grades, and financial-aid data consistent across every connected system.',
+      'The result was one calm front door to the university: dashboards loaded noticeably faster, manual data corrections across systems dropped sharply, and zero-downtime deploys on AWS with Docker and GitHub Actions let us ship through peak registration without disrupting students.',
     ],
-    highlights: [
-      'Built the platform in React, Next.js, and TypeScript over Node.js, Spring Boot, REST, and Redis APIs.',
-      'Integrated Ellucian Banner and DegreeWorks with query tuning and caching.',
-      'Owned Java/Spring Boot services over PostgreSQL with REST-webhook reconciliation for enrollment, grades, and financial aid.',
-      'Deployed on AWS EC2/S3 with Docker and GitHub Actions CI/CD — low-disruption releases during peak registration.',
-    ],
-    stack: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Spring Boot', 'PostgreSQL', 'Redis', 'AWS', 'Docker'],
+    stack: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Spring Boot', 'PostgreSQL', 'Redis', 'REST APIs', 'AWS', 'Docker', 'GitHub Actions'],
   },
   {
     id: 'hcl',
     index: '03',
     company: 'HCL Tech',
-    title: 'Enterprise Banking — Payments at Scale',
+    project: 'Enterprise Banking — Payments at Scale',
     period: 'May 2020 — Dec 2022',
     region: 'India',
-    blurb:
-      'Invoice tracking and payment workflows for enterprise banking customers across regions — front to back, with exactly-once event processing and a legacy-to-microservices modernization underneath.',
-    metrics: [
-      { value: 'exactly-once', label: 'Transaction handling under high load' },
-      { value: '−35%', label: 'Peak-period API response time' },
-      { value: '−45%', label: 'Batch processing time (analytics & compliance)' },
-      { value: '−40%', label: 'Production defects after modernization' },
+    narrative: [
+      'This was an enterprise banking platform for invoice tracking and payment workflows used by corporate banking customers across regions. Payments at this scale cannot drop or double-charge, so the system needed exactly-once processing and resilience under heavy, bursty load — while a legacy monolith underneath was slowing every release down to days.',
+      'I worked across the stack: responsive React and TypeScript interfaces backed by Java and Spring Boot APIs, and the event-driven payment engine built on Kafka with idempotent retries and dead-letter queues so transactions stayed correct under pressure. I also built ETL pipelines in Python and BigQuery that fed clean data to downstream finance, analytics, and compliance teams.',
+      'I helped modernize the legacy backend into microservices on Docker, Terraform, and Google Cloud (Cloud Run and GKE), which cut release cycles from days to hours, reduced peak-period response times, and brought down production defects after the migration — a more reliable payments platform that the business could evolve quickly.',
     ],
-    highlights: [
-      'Built responsive React/TypeScript interfaces backed by Java and Spring Boot APIs.',
-      'Engineered event-driven payment processing with Kafka using idempotent retries and dead-letter queues.',
-      'Built ETL pipelines with Python and GCP BigQuery for downstream finance teams.',
-      'Modernized legacy backends into microservices on Docker, Terraform, GCP Cloud Run, and GKE — releases from days to hours.',
-    ],
-    stack: ['React', 'TypeScript', 'Java', 'Spring Boot', 'Kafka', 'PostgreSQL', 'Python', 'BigQuery', 'Docker', 'GKE'],
+    stack: ['React', 'TypeScript', 'Java', 'Spring Boot', 'Kafka', 'PostgreSQL', 'Python', 'BigQuery', 'Docker', 'Terraform', 'GKE', 'Cloud Run'],
   },
 ]
 
 export const stackGroups = [
   {
     label: 'Languages',
-    items: ['Java', 'TypeScript', 'JavaScript', 'Python', 'Go', 'SQL'],
+    items: ['Java', 'TypeScript', 'JavaScript (ES6+)', 'Python', 'Go', 'SQL'],
   },
   {
     label: 'Frontend',
-    items: ['React', 'Next.js (SSR)', 'Redux', 'Tailwind CSS', 'Jest', 'Cypress'],
+    items: ['React', 'Next.js (SSR)', 'Redux', 'Tailwind CSS', 'HTML5', 'CSS3', 'Jest', 'React Testing Library', 'Cypress'],
   },
   {
     label: 'Backend',
-    items: ['Node.js', 'Express', 'Spring Boot', 'GraphQL', 'gRPC', 'Kafka', 'Redis', 'Microservices'],
+    items: ['Node.js', 'Express.js', 'Spring Boot', 'REST APIs', 'GraphQL', 'gRPC', 'Kafka', 'Redis', 'Microservices'],
   },
   {
     label: 'AI / ML',
-    items: ['LLM Integration', 'RAG', 'pgvector', 'Vector Retrieval', 'LangChain', 'OpenAI API', 'Anthropic API'],
+    items: ['LLM Integration', 'RAG', 'pgvector', 'Vector Retrieval', 'LangChain', 'OpenAI API', 'Anthropic API', 'Prompt Engineering'],
   },
   {
     label: 'Cloud & DevOps',
-    items: ['GCP', 'AWS', 'Docker', 'Kubernetes', 'Terraform', 'Helm', 'GitHub Actions', 'Prometheus', 'Grafana'],
+    items: ['GCP', 'AWS (EC2, S3, CloudWatch, DynamoDB)', 'Docker', 'Kubernetes', 'Terraform', 'Helm', 'GitHub Actions', 'Prometheus', 'Grafana'],
   },
   {
-    label: 'Data',
+    label: 'Databases',
     items: ['PostgreSQL', 'MongoDB', 'Redis', 'Snowflake', 'Elasticsearch', 'DynamoDB'],
+  },
+  {
+    label: 'Engineering Practices',
+    items: ['System Design', 'Distributed Systems', 'Event-Driven Architecture', 'Domain-Driven Design', 'Microservices', 'TDD', 'CI/CD', 'Agile / Scrum'],
+  },
+  {
+    label: 'AI Developer Tools',
+    items: ['Claude Code', 'GitHub Copilot', 'Cursor', 'Codex'],
   },
 ]
 

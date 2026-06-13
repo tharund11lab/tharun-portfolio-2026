@@ -1,49 +1,50 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { profile } from '../data/content'
 
-const sections = [
-  { id: 'about', label: 'About' },
-  { id: 'work', label: 'Experience' },
-  { id: 'capabilities', label: 'Skills' },
-  { id: 'experience', label: 'Career Timeline' },
-  { id: 'education', label: 'Education' },
-  { id: 'contact', label: 'Contact' },
+const LINKS = [
+  { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Education', href: '#education' },
+  { label: 'Contact', href: '#contact' },
 ]
 
-export default function Nav() {
-  const [active, setActive] = useState('')
+// Hides on scroll down, returns frosted on scroll up.
+// Anchor clicks route through Lenis for eased travel.
+export default function Nav({ lenis }) {
+  const [hidden, setHidden] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const lastY = useRef(0)
 
   useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id)
-        })
-      },
-      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
-    )
-    sections.forEach((s) => {
-      const el = document.getElementById(s.id)
-      if (el) obs.observe(el)
-    })
-    return () => obs.disconnect()
+    const onScroll = () => {
+      const y = window.scrollY
+      setHidden(y > 140 && y > lastY.current)
+      setScrolled(y > 30)
+      lastY.current = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const go = (e, href) => {
+    e.preventDefault()
+    const el = document.querySelector(href)
+    if (!el) return
+    if (lenis?.current) lenis.current.scrollTo(el, { duration: 1.4 })
+    else el.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <header className="topbar">
-      <div className="topbar-inner">
-        <a href="#top" className="topbar-brand">
-          <span className="sq" />
+    <header className={`nav${hidden ? ' is-hidden' : ''}${scrolled ? ' is-scrolled' : ''}`}>
+      <div className="nav__inner">
+        <a className="nav__brand" href="#top" onClick={(e) => go(e, '#top')}>
           {profile.name}
         </a>
-        <nav className="topbar-nav">
-          {sections.map((s) => (
-            <a
-              key={s.id}
-              href={`#${s.id}`}
-              className={active === s.id ? 'is-active' : ''}
-            >
-              {s.label}
+        <nav className="nav__links">
+          {LINKS.map((l) => (
+            <a key={l.label} className="nav__link" href={l.href} onClick={(e) => go(e, l.href)}>
+              {l.label}
             </a>
           ))}
         </nav>
