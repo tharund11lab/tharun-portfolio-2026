@@ -76,7 +76,7 @@ export default function Contact() {
                 </a>
               ))}
               <a href={`tel:${profile.phone.replace(/[^+\d]/g, '')}`}>{profile.phone}</a>
-              <a href="/Tharun_Derangula_Fullstack_Resume.pdf" download>Résumé ↓</a>
+              <a href="/Tharun_Derangula_Fullstack_Resume.pdf" download>Resume ↓</a>
             </div>
           </div>
         </div>

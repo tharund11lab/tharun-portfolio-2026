@@ -116,7 +116,7 @@ export default function Hero({ ready }) {
               <div className="hero__ctas" style={{ visibility: 'hidden' }}>
                 <a className="btn btn--solid" href="#experience"><span>View my work ↓</span></a>
                 <a className="btn btn--line" href="/Tharun_Derangula_Fullstack_Resume.pdf" download>
-                  <span>Download résumé</span>
+                  <span>Download Resume</span>
                 </a>
                 <a className="btn btn--line" href={`mailto:${profile.email}`}><span>Email</span></a>
               </div>

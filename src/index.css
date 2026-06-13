@@ -790,6 +790,54 @@ img { max-width: 100%; display: block; }
 }
 .footnote { font-size: 0.58rem; color: var(--ink-3); }
 
+/* ── Mobile-only refinements (≤768px) ──────────────────────── */
+@media (max-width: 768px) {
+  /* Experience: full width, centered, no narrow left column */
+  .exp-panel__company,
+  .exp-panel__meta,
+  .exp-panel__project,
+  .exp-panel__story,
+  .exp-panel__stackwrap { max-width: 100%; }
+  .exp-panel__inner { text-align: center; }
+  .exp-panel__project { padding-left: 0; padding-right: 0; }
+  .exp-panel__stacklabel { justify-content: center; }
+  .exp-panel__stack { justify-content: center; }
+
+  /* let the panel grow so the ghost number is never clipped */
+  .exp-panel { overflow: visible; }
+  /* reserve space below the chips, then sit the number in that gap */
+  .exp-panel__inner { padding-bottom: clamp(9rem, 34vw, 12rem); }
+  .exp-panel__bg {
+    right: 50%; transform: translateX(50%);
+    bottom: clamp(1rem, 3vw, 2.5rem);
+    font-size: clamp(7rem, 30vw, 11rem);
+  }
+
+  /* Contact: center every item */
+  .contact__grid { flex-direction: column; align-items: center; }
+  .contact__email { text-align: center; }
+  .contact__links { align-items: center; text-align: center; width: 100%; }
+
+  /* Hero: center the copy column */
+  .hero__copy { text-align: center; }
+  .hero__kicker { justify-content: center; }
+  .hero__tagline { margin-left: auto; margin-right: auto; }
+
+  /* Hero CTAs: one compact horizontal row */
+  .hero__ctas {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+  .hero__ctas .btn {
+    flex: 0 1 auto;
+    padding: 0.6rem 0.7rem;
+    font-size: 0.54rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+}
+
 /* ── Reduced motion ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
