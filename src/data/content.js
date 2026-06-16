@@ -8,12 +8,12 @@ export const profile = {
   initials: 'TD',
   role: 'Full-Stack Software Engineer',
   focus: ['AI / ML Integration', 'Distributed Systems'],
-  location: 'San Francisco Bay Area, CA',
+  location: 'United States',
   status: 'Open to Senior / Staff roles',
   email: 'dtharun209@gmail.com',
   phone: '+1 (408) 652-9472',
   tagline:
-    'I build AI products and event-driven systems that stay calm under load — and ship them at Walmart scale.',
+    'I build AI products and event-driven systems that stay calm under load and ship them at Walmart scale.',
   intro:
     'Full-stack engineer with 4+ years turning ambiguous product ideas into production systems that serve millions. Lately I live where AI meets distributed infrastructure: RAG and LLM features on top of resilient, observable, event-driven backends. I own features end to end, mentor the engineers around me, and move fast without leaving a mess.',
   links: [
@@ -141,8 +141,10 @@ export const timeline = [
 export const certifications = [
   'Google Professional Cloud Architect',
   'Google AI Essentials Specialization',
-  'IBM Generative AI Engineering Professional',
-  'Microsoft Full-Stack Developer Professional',
+  'AWS Certified Solutions Architect - Professional',
+  'Microsoft Generative AI Engineering Professional',
+  'Anthropic - Al Fluency Framework & Foundations',
+  'Anthropic - Claude code 101',
 ]
 
 // Tech words for the hero marquee
